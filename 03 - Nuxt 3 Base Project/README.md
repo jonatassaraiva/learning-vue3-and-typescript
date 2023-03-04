@@ -1,11 +1,9 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Base Project
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project aims to exemplify the use of some frameworks to build a web application using Nuxt 3 and TypeScript
 
 ## Setup
-
 Make sure to install the dependencies:
-
 ```bash
 # yarn
 yarn install
@@ -18,25 +16,30 @@ pnpm install
 ```
 
 ## Development Server
-
 Start the development server on http://localhost:3000
-
 ```bash
 npm run dev
 ```
 
-## Production
-
-Build the application for production:
-
+## Production SSR
+Build the application for production with SSR:
 ```bash
 npm run build
 ```
 
 Locally preview production build:
-
 ```bash
-npm run preview
+npm run preview-ssr
+```
+
+## Production SPA
+Build the application for production with SPA:
+```bash
+npm run generate
+```
+Locally preview production build:
+```bash
+npm run preview-spa
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
