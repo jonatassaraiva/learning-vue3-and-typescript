@@ -7,7 +7,8 @@
     "preview-ssr": "nuxt preview",
     "preview-ssr-lambda": "sls offline",
     "preview-spa": "http-server .output/public",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "sls deploy --verbose"
   },
   "devDependencies": {
     "http-server": "^14.1.1",

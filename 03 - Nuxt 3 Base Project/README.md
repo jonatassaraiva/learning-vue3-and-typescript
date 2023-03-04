@@ -1,6 +1,5 @@
 # Nuxt 3 Base Project
-
-This project aims to exemplify the use of some frameworks to build a web application using Nuxt 3 and TypeScript
+This project implements the use of some frameworks to build a web application using Nuxt 3 and TypeScript.
 
 ## Setup
 Make sure to install the dependencies:
@@ -15,9 +14,10 @@ npm install
 pnpm install
 ```
 
-Create file .env with variabels:
+Create the file .env with local development values variables:
 ```
 NODE_ENV="development"
+AWS_DEPLOYMENT_BUCKET="local"
 ```
 
 ## Development Server
@@ -50,6 +50,17 @@ npm run generate
 Locally preview production build:
 ```bash
 npm run preview-spa
+```
+
+## Bash to deploy on AWS Lambda
+```
+#!/bin/bash
+# npm i
+AWS_ACCESS_KEY_ID="<yout aws acccess id>" \
+AWS_SECRET_ACCESS_KEY="<yout aws secret acccess key>" \
+NODE_ENV="production" \
+AWS_DEPLOYMENT_BUCKET="<same bucket to upload the output app>" \
+npm run deploy
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

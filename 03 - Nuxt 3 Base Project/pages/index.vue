@@ -4,7 +4,7 @@ import { PageInfo } from "@/types";
 
 const pageInfo: PageInfo = reactive({
   title: "Home",
-  description: "Web project base with NUXT 3 and TypeScript"
+  description: "Web project base with NUXT 3, TypeScript and Lambda Host"
 });
 
 useHead({

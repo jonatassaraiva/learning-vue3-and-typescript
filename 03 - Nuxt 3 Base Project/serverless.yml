@@ -11,11 +11,14 @@ provider:
   name: aws
   region: us-east-1
   runtime: nodejs18.x
+  deploymentBucket: ${env:AWS_DEPLOYMENT_BUCKET}
+
   stage: v1
   stackName: ${self:service}-${self:provider.stage}
 
   tracing:
     lambda: true
+
   logRetentionInDays: 30
 
   tags:
@@ -63,9 +66,4 @@ functions:
 package:
   patterns:
     - '!**/*'
-    - '.nuxt/dist/**'
-    - 'static/**'
-    - 'node_modules/**'
-    - 'handler.js'
-    - 'nuxt.build.js'
-    - 'nuxt.config.js'
+    - '.output/**'

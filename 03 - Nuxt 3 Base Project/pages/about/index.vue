@@ -4,7 +4,7 @@ import { PageInfo } from "@/types";
 
 const pageInfo: PageInfo = reactive({
   title: "About",
-  description: "This project aims to exemplify the use of some frameworks to build a web application using Nuxt 3 and TypeScript"
+  description: "This project implements the use of some frameworks to build a web application using Nuxt 3 and TypeScript."
 });
 
 useHead({
