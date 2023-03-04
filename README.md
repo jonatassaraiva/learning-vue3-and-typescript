@@ -1,6 +1,6 @@
 # VUE 3 and TypeScript
 
-Este repositório contém o código do meu aprendizado sobre VUE 3 e TypeScript
+This repository contains the code from my learning about VUE 3 and TypeScript
 
 Courses:
 * [Intro to Vue 3 and TypeScript](https://www.vuemastery.com/courses/vue3-typescript/why-vue-&-typescript)
