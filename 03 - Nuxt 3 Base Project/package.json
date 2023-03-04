@@ -5,11 +5,16 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview-ssr": "nuxt preview",
+    "preview-ssr-lambda": "sls offline",
     "preview-spa": "http-server .output/public",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "http-server": "^14.1.1",
-    "nuxt": "^3.2.3"
+    "nuxt": "^3.2.3",
+    "serverless": "^3.28.1",
+    "serverless-offline": "^12.0.4",
+    "serverless-plugin-ifelse": "^1.0.7",
+    "serverless-prune-plugin": "^2.0.2"
   }
 }

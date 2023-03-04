@@ -1,0 +1,71 @@
+service: app-nuxt-3-typescript
+
+frameworkVersion: '3'
+
+useDotenv: true
+
+deprecationNotificationMode: warn:summary
+configValidationMode: error
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs18.x
+  stage: v1
+  stackName: ${self:service}-${self:provider.stage}
+
+  tracing:
+    lambda: true
+  logRetentionInDays: 30
+
+  tags:
+
+  environment:
+
+plugins:
+  - serverless-offline
+  - serverless-prune-plugin
+  - serverless-plugin-ifelse
+
+custom:
+  serverless-offline:
+    httpPort: ${env:PORT, '3000'}
+    lambdaPort: 4000
+  prune:
+    automatic: true
+    number: 3
+  serverlessIfElse:
+    - If: '"${env:NODE_ENV}" == "production"'
+      Exclude:
+        - functions.api.events.0.httpApi
+
+functions:
+  api:
+    name: ${self:service}_${self:provider.stage}
+    handler: .output/server/index.handler
+    description: App Nuxt 3 and Typescript
+    url:
+      cors:
+        allowedOrigins:
+          - '*'
+        allowedHeaders:
+          - '*'
+        allowedMethods:
+          - '*'
+    events:
+      - httpApi: '*'
+    environment:
+
+# CloudFormation template syntax from here on.
+# resources:
+#   Resources:
+
+package:
+  patterns:
+    - '!**/*'
+    - '.nuxt/dist/**'
+    - 'static/**'
+    - 'node_modules/**'
+    - 'handler.js'
+    - 'nuxt.build.js'
+    - 'nuxt.config.js'

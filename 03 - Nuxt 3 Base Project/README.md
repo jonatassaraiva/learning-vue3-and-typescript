@@ -15,6 +15,11 @@ npm install
 pnpm install
 ```
 
+Create file .env with variabels:
+```
+NODE_ENV="development"
+```
+
 ## Development Server
 Start the development server on http://localhost:3000
 ```bash
@@ -30,6 +35,11 @@ npm run build
 Locally preview production build:
 ```bash
 npm run preview-ssr
+```
+
+Locally serverless lambda:
+```bash
+npm run preview-ssr-lambda
 ```
 
 ## Production SPA
