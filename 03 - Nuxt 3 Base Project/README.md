@@ -18,6 +18,7 @@ Create the file .env with local development values variables:
 ```
 NODE_ENV="development"
 AWS_DEPLOYMENT_BUCKET="local"
+VUETFY_ISSUE_15202=true
 ```
 
 ## Development Server

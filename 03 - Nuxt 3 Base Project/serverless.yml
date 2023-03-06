@@ -40,10 +40,10 @@ custom:
   serverlessIfElse:
     - If: '"${env:NODE_ENV}" == "production"'
       Exclude:
-        - functions.api.events.0.httpApi
+        - functions.ssr.events.0.httpApi
 
 functions:
-  api:
+  ssr:
     name: ${self:service}_${self:provider.stage}
     handler: .output/server/index.handler
     description: App Nuxt 3 and Typescript
@@ -58,6 +58,7 @@ functions:
     events:
       - httpApi: '*'
     environment:
+      VUETFY_ISSUE_15202: ${env:VUETFY_ISSUE_15202}
 
 # CloudFormation template syntax from here on.
 # resources:

@@ -4,7 +4,8 @@ import { PageInfo } from "@/types";
 
 const pageInfo: PageInfo = reactive({
   title: "About",
-  description: "This project implements the use of some frameworks to build a web application using Nuxt 3 and TypeScript."
+  description:
+    "This project implements the use of some frameworks to build a web application using Nuxt 3 and TypeScript.",
 });
 
 useHead({
@@ -14,11 +15,13 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <h1>{{ pageInfo.title }}</h1>
-    <p>{{ pageInfo.description }}</p>
-    <NuxtLink to="/">
-      Home
-    </NuxtLink>
-  </div>
+  <v-row>
+    <p class="text-h3">{{ pageInfo.title }}</p>
+  </v-row>
+  <v-row>
+    <p class="text-subtitle-1">{{ pageInfo.description }}</p>
+  </v-row>
+  <v-row>
+    <v-btn variant="outlined" to="/"> home </v-btn>
+  </v-row>
 </template>
